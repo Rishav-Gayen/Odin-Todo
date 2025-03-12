@@ -1,0 +1,148 @@
+.project-modal, .task-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.project-modal-content, .task-modal-content {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    gap: 10px;
+}
+
+.project-modal-heading, .project-modal-form, .task-modal-heading, .task-modal-form {
+    padding: 1rem 2rem;
+}
+
+.project-modal-heading, .task-modal-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2c3e50;
+    color: white;
+    font-size: 1.2rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.project-modal-heading .fa-xmark, .task-modal-heading .fa-xmark {
+    font-size: 1.8rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.project-modal-heading .fa-xmark:hover {
+    color: #c6c7c8;
+}
+
+.project-modal-form, .task-modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1.5rem;
+}
+
+#projectName, #editProjectName, #taskName, #taskDesc, #taskDate, #editTaskName, #editTaskDesc, #editTaskDate {
+    padding: 1rem 2rem;
+    border-radius: 5px;
+}
+
+.ok, .cancel {
+    margin-top: 5px;
+    background-color: #2c3e50;
+    padding: 5px 15px;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 8px;
+}
+
+.cancel {
+    background-color: #d84040;
+}
+
+/* Edit project */
+
+.edit-project-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-project-modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+}
+
+.task-modal-form-elem{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.task-description-modal {
+    position: fixed;
+    z-index: 1000; /* Ensure it's on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    justify-content: center;
+    align-items: center;
+}
+
+.task-description-modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Center the modal */
+    border: 1px solid #888;
+    width: 50%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.task-description-modal-close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.task-description-modal-close:hover {
+    color: black;
+}
+
+.task-description-modal-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color: white;
+    background-color: #2c3e50;
+    padding: 1rem 2rem;
+}
+
+.task-description-modal-text {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    padding: 1rem;
+}

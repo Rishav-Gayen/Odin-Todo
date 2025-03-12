@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="modal.css">
+
+    <title>Do It. Todo-list</title>
+</head>
+<body>
+    <header class="header">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-xmark hidden"></i>
+        <h1 class="heading logo">
+            <i class="fa-solid fa-clipboard-check"></i>
+            Do it
+        </h1>
+    </header>
+
+    <main class="main-area">
+        <section class="sidebar">
+            <div class="filter-area">
+                <div class="filter subheading all">
+                    <i class="icon fa-regular fa-calendar-days"></i>
+                    <h2>All</h2>
+                </div>
+                <div class="filter subheading today">
+                    <i class="icon fa-solid fa-calendar-day"></i>
+                    <h2 class=>Today</h2>
+                </div>
+                <div class="filter subheading week">
+                    <i class="icon fa-solid fa-calendar-week"></i>
+                    <h2 class=>This week</h2>
+                </div>
+                <div class="filter subheading important">
+                    <i class="icon fa-solid fa-circle-exclamation"></i>
+                    <h2>Important</h2>
+                </div>
+
+                <div class="filter subheading completed">
+                    <i class="icon fa-solid fa-square-check"></i>
+                    <h2>Completed</h2>
+                </div>
+            </div>
+
+            <div class="project-area">
+                <h2 class="subheading project-heading">Projects <i class="add-project fa-solid fa-plus"></i></h2>
+                <div class="projects">
+                </div>
+            </div>
+        </section>
+
+        <section class="content-area">
+            <h1 class="content-heading">
+                <!-- <i class="add-task fa-solid fa-plus"></i> -->
+                <!-- <span class="hidden proj-id"></span> -->
+            </h1>
+            <article class="task-area">
+            </article>
+        </section>
+    </main>
+
+    <section class="project-modal hidden">
+        <div class="project-modal-content">
+            <div class="project-modal-heading">
+                <h2 class="heading-text">
+                    Add Project
+                </h2>
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <form class="project-modal-form">
+                <label for="projectName">Add Project</label>
+                <input type="text" name="projectName" id="projectName" placeholder="Project Name" required>
+                
+                <div class="project-modal-buttons">
+                    <button class="ok" type="submit">Ok</button>
+                    <button class="cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="task-modal hidden">
+        <div class="task-modal-content">
+            <div class="task-modal-heading">
+                <h2 class="task-modal-heading-text">
+                    Add Task
+                </h2>
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <form class="task-modal-form">
+                <div class="task-modal-form-elem">
+                    <label for="taskName">Task Name</label>
+                    <input type="text" name="taskName" id="taskName" placeholder="Task Name" required>
+                </div>
+
+                <div class="task-modal-form-elem">
+                    <label for="taskDesc">Task Description</label>
+                    <textarea name="taskDesc" id="taskDesc" placeholder="Task Description" required></textarea>
+                </div>
+
+                <div class="task-modal-form-elem">
+                    <label for="taskDate">Due Date</label>
+                    <input type="date" name="taskDate" id="taskDate" required>
+                </div>
+
+                <div class="task-modal-form-elem">
+                    <label for="taskPriority">Priority</label>
+                    <select name="taskPriority" id="taskPriority" required>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                
+               
+                <div class="task-modal-buttons">
+                    <button class="ok" type="submit">Ok</button>
+                    <button class="cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    <section class="task-modal hidden" id="edit-task">
+        <div class="task-modal-content">
+            <div class="task-modal-heading">
+                <h2 class="task-modal-heading-text">
+                    Edit Task
+                </h2>
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <form class="task-modal-form">
+                <div class="task-modal-form-elem">
+                    <label for="taskName">Task Name</label>
+                    <input type="text" name="taskName" id="editTaskName" placeholder="Task Name" required>
+                </div>
+
+                <div class="task-modal-form-elem">
+                    <label for="taskDesc">Task Description</label>
+                    <textarea name="taskDesc" id="editTaskDesc" placeholder="Task Description" required></textarea>
+                </div>
+
+                <div class="task-modal-form-elem">
+                    <label for="taskDate">Due Date</label>
+                    <input type="date" name="taskDate" id="editTaskDate" required>
+                </div>
+
+                <div class="task-modal-form-elem">
+                    <label for="taskPriority">Priority</label>
+                    <select name="taskPriority" id="editTaskPriority" required>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                
+               
+                <div class="task-modal-buttons">
+                    <button class="ok" type="submit">Ok</button>
+                    <button class="cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <div id="taskDescriptionModal" class="task-description-modal hidden">
+        <div class="task-description-modal-content">
+            
+            <h2 class="task-description-modal-title">
+                Task Description
+                <span class="task-description-modal-close"><i class="fa-solid fa-xmark"></i></span>
+            </h2>
+            <p id="taskDescriptionText" class="task-description-modal-text"></p>
+        </div>
+    </div>
+
+    
+    <script src="main.js"></script>
+</body>
+</html>
