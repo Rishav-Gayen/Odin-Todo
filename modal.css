@@ -146,3 +146,16 @@
     line-height: 1.6;
     padding: 1rem;
 }
+
+
+@media screen and (max-width: 600px) {
+    .task-description-modal-title {
+        font-size: 16px;
+    }
+
+    .task-description-modal-title .task-description-modal-close {
+        display: inline-block;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+}
